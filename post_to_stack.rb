@@ -1,10 +1,27 @@
+ENV["SSL_CERT_FILE"] = "./cacert.pem" #OpenSSLの対策です。
 require "httparty"
 
-#Ruby2.xはSSLの問題がまだ発生しているので、SSL問題を修正しないと実行できないです。
-#http://stackoverflow.com/questions/4528101/ssl-connect-returned-1-errno-0-state-sslv3-read-server-certificate-b-certificat 
-#http://d.hatena.ne.jp/komiyak/20130508/1367993536
+$site = 'stackoverflow'
+$access_token = '' #取得したaccess_token
+$title = '' #投稿するタイトル
+$body = '' #投稿する本文
+$tags = '' #投稿するタグ
+$key = '' #登録したstackappのキー
+$preview = true #テストだけにしたければtrueにして下さい。
 
-response = HTTParty.post('http://api.stackexchange.com/2.2/questions/add', body: {
-  site: 'stackoverflow', title: 'placeholder just test StackExchange write_access api', body: 'placeholder just test StackExchange write_access api',
-  tags: 'placeholder', key: 'X6slp5xIMDTom2t0y051iQ((', access_token: 'KSHEQgM3y6Nd6W6*l(S9ow))', preview: 'true'})
-puts response
+class SOF
+  include HTTParty
+  base_uri "https://api.stackexchange.com"
+
+  def questions
+    self.class.post("/2.2/questions/add", 
+    { body: {site: $site, title: $title, body: $body, tags: $tags, key: $key, access_token: $access_token, preview: $preview} })
+  end
+
+end
+
+sof = SOF.new()
+#StackOverFlowは投稿タイトルと本文をよくチェックするので、ご注意ください。
+#投稿タイトルと本文が不合格になれば、エラーメッセージ："This post does not meet our quality standards."が出ます。
+puts sof.questions
+
