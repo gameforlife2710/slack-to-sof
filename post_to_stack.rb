@@ -1,5 +1,7 @@
 ENV["SSL_CERT_FILE"] = "./cacert.pem" #OpenSSLの対策です。
 require "httparty"
+require "slack"
+require "yaml"
 
 $site = 'stackoverflow'
 $access_token = '' #取得したaccess_token
