@@ -16,7 +16,7 @@ module StackOverFlow
     base_uri "https://api.stackexchange.com"
   
     def questions
-      self.class.post("/2.2/questions/add", 
+      return self.class.post("/2.2/questions/add", 
       { body: {site: $site, title: $title, body: $body, tags: $tags, key: $key, access_token: $access_token, preview: $preview} })
     end
   

@@ -11,12 +11,12 @@
 ・write_accessの権限のため、アプリのStack Apps Postがなければならない、Stack Apps Postはこんな感じです  
 　http://stackapps.com/questions/7099/placeholder-ruby-script-for-posting-question-to-stackoverflow-by-slack-message  
   
-◆メッセージパターン
-<post_to_stack>  
-<title>this is a title<end_title>  
-<body>this is a body<end_body>  
-<tags>this is a tags<end_tags>  
-<access_token>this is a access_token<end_access_token>  
-<key>this is a key<end_key>  
-<preview>this is a preview<end_preview>  テストなら、trueにしてください           
+◆メッセージパターン  
+&lt;#post_to_stack&gt;      
+<title>this is a title<end_title>    
+<body>this is a body<end_body>    
+<tags>this is a tags<end_tags>    
+<access_token>this is a access_token<end_access_token>    
+<key>this is a key<end_key>    
+<preview>this is a preview<end_preview>  テストなら、trueにしてください             
   
