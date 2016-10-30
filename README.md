@@ -12,11 +12,11 @@
 　http://stackapps.com/questions/7099/placeholder-ruby-script-for-posting-question-to-stackoverflow-by-slack-message  
   
 ◆メッセージパターン  
-&lt;#post_to_stack&gt;      
-<title>this is a title<end_title>    
-<body>this is a body<end_body>    
-<tags>this is a tags<end_tags>    
-<access_token>this is a access_token<end_access_token>    
-<key>this is a key<end_key>    
-<preview>this is a preview<end_preview>  テストなら、trueにしてください             
+&lt;post_to_stack&gt;      
+&lt;title&gt;this is a title&lt;end_title&gt;    
+&lt;body&gt;this is a body&lt;end_body&gt;    
+&lt;tags&gt;this is a tags&lt;end_tags&gt;    
+&lt;access_token&gt;this is a access_token&lt;end_access_token&gt;      
+&lt;key&gt;this is a key&lt;end_key&gt;    
+&lt;preview&gt;this is a preview&lt;end_preview&gt;  テストなら、trueにしてください               
   
