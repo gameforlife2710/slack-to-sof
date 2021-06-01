@@ -11,7 +11,7 @@ TOKEN = setting["token"]
 BOTNAME = "test-bot"
 Slack.configure {|config| config.token = TOKEN }
 client = Slack.realtime
-
+# test 20210601
 client.on :hello do
   puts 'Successfully connected.'
 end
