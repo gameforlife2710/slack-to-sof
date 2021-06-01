@@ -2,7 +2,7 @@
 require "httparty"
 
 module StackOverFlow
-  
+  # test 20210601
   $site = 'stackoverflow'
   $access_token = '' #取得したaccess_token
   $title = '' #投稿するタイトル
